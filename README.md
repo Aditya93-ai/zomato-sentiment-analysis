@@ -47,3 +47,24 @@ is impossible. This project builds an automated pipeline that:
 
 pip install pandas numpy matplotlib seaborn scikit-learn vaderSentiment
 python zomato_sentiment_analysis.py
+
+## 📊 Visualizations
+**Exploratory Data Analysis**
+![EDA](zomato_01_eda.png)
+
+**Model Performance**
+![Model](zomato_02_model.png)
+
+**Aspect-Based Sentiment Analysis**
+![Aspects](zomato_03_aspects.png)
+
+##key Insights
+- Food quality is the most discussed factor in customer reviews
+- Delivery delays strongly correlate with negative sentiment
+- Customer Service receives the most complaints proportionally
+  nearly 6 out of 10 mentions are negative experiences
+- Significant variation in satisfaction across cities,Pune has the highest positive sentiment (67.1%), Chennai the lowest      (56%)
+- Logistic Regression achieved 96.2% accuracy on test data
+- Supervised ML outperformed VADER (67.1%) significantly
+- Negative reviews mention delivery time 34% more than positive ones
+- Pune has the highest positive sentiment (67.1%), Chennai the lowest
