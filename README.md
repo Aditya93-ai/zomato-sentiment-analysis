@@ -23,7 +23,7 @@ is impossible. This project builds an automated pipeline that:
 - Python, Pandas, NumPy
 - NLTK, VADER (unsupervised sentiment scoring)
 - TF-IDF Vectorization (scikit-learn)
-- Logistic Regression, Naive Bayes (classification)
+- Logistic Regression(classification)
 - Matplotlib, Seaborn (visualization)
 
 ## 📊 Key Findings
