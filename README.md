@@ -37,7 +37,7 @@ is impossible. This project builds an automated pipeline that:
 ## 📁 Project Structure
 
 ├── zomato_reviews.csv              # Dataset (2000 reviews, 9 features)
-├── zomato_sentiment_analysis.py    # Main analysis script
+├── zomato_sentiment_analysis.ipynb    # Main analysis script
 ├── 01_eda_dashboard.png            # Exploratory data analysis visuals
 ├── 02_model_performance.png        # Model accuracy & confusion matrix
 ├── 03_aspect_analysis.png          # Aspect-based sentiment breakdown
@@ -49,15 +49,18 @@ pip install pandas numpy matplotlib seaborn scikit-learn vaderSentiment
 python zomato_sentiment_analysis.py
 
 ## 📊 Visualizations
-**Exploratory Data Analysis**
-![EDA](zomato_01_eda.png)
 
-**Model Performance**
-![Model](zomato_02_model.png)
+### Most Discussed Aspects
+![Aspects](Most_discussed_aspects.png)
 
-**Aspect-Based Sentiment Analysis**
-![Aspects](zomato_03_aspects.png)
+### Top Keywords by Sentiment Class (TF-IDF)
+![TF-IDF](Aspect_Analyis.png)
 
+### Sentiment Split per Aspect
+![Sentiment Split](Sentiment_Split_Per_Aspect.png)
+
+### Power BI Dashboard
+![Dashboard](zomato_powerbi_dashboard.png)
 ##key Insights
 - Food quality is the most discussed factor in customer reviews
 - Delivery delays strongly correlate with negative sentiment
