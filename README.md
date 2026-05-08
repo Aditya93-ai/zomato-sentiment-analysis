@@ -1,56 +1,96 @@
 # zomato-sentiment-analysis
-End-to-end sentiment analysis on Zomato reviews using NLP and ML to uncover customer satisfaction drivers across delivery, food quality, and pricing.
+An end-to-end NLP project analyzing customer reviews from Zomato using Python, Machine Learning, and Power BI to uncover customer satisfaction drivers across delivery, food quality, and pricing.
 
-## 📌 Project Overview
+Objective
+To analyze 2,000 Zomato restaurant reviews across 8 Indian cities and automatically classify customer sentiment as Positive, Neutral, or Negative — while identifying which aspects (food quality, delivery, packaging, price) drive customer satisfaction or dissatisfaction.
 
-This project performs end-to-end sentiment analysis on 2,000 Zomato 
-restaurant reviews across 8 major Indian cities. The goal is to 
-automatically classify customer reviews as Positive, Neutral, or 
-Negative — and extract what specific aspects (delivery, food quality, 
-packaging, price) are driving customer satisfaction or dissatisfaction.
+Tools Used
+ToolPurposePython (Pandas, NumPy, Matplotlib, Seaborn)Data cleaning and exploratory data analysisNLTK, VADERText preprocessing and unsupervised sentiment scoringScikit-learn (TF-IDF, Logistic Regression, Naive Bayes)Feature extraction and sentiment classificationPower BIInteractive dashboard and data visualization
 
-## 🎯 Business Problem
+Dataset
 
-Zomato receives thousands of reviews daily. Manually reading each one 
-is impossible. This project builds an automated pipeline that:
-- Classifies review sentiment with 96% accuracy
-- Identifies which aspects customers complain about most
-- Highlights which cities have the lowest satisfaction scores
-- Gives the retention/ops team actionable signals to act on
+Source: Synthetically generated dataset modelled on real-world Zomato review patterns
+Size: 2,000 rows, 9 columns
+Description: Customer reviews from 20 restaurants across 8 Indian cities covering 8 cuisine types
 
-## 🛠️ Tools & Technologies
 
-- Python, Pandas, NumPy
-- NLTK, VADER (unsupervised sentiment scoring)
-- TF-IDF Vectorization (scikit-learn)
-- Logistic Regression(classification)
-- Matplotlib, Seaborn (visualization)
+## Features
 
-## 📊 Key Findings
+| Column | Description |
+|--------|-------------|
+| review_id | Unique review identifier |
+| restaurant_name | Name of the restaurant |
+| cuisine_type | Type of cuisine |
+| city | City where the restaurant is located |
+| rating | Customer rating (1 to 5) |
+| delivery_time_mins | Delivery time in minutes |
+| order_value_inr | Order value in Indian Rupees |
+| review_text | Raw customer review text |
+| sentiment_label | Ground truth sentiment (Positive / Neutral / Negative) |
 
-- Logistic Regression achieved 96.2% accuracy on test data
-- Supervised ML outperformed VADER (67.1%) significantly
-- Food Quality is the most discussed aspect in reviews
-- Negative reviews mention delivery time 34% more than positive ones
-- Pune has the highest positive sentiment (67.1%), Chennai the lowest
 
-## 📁 Project Structure
+Project Workflow
 
-├── zomato_reviews.csv              # Dataset (2000 reviews, 9 features)
-├── zomato_sentiment_analysis.ipynb # Main analysis notebook
-├── Most_discussed_aspects.png      # Aspect mention counts
-├── Aspect_Analyis.png              # TF-IDF keywords chart
-├── Sentiment_Split_Per_Aspect.png  # Sentiment per aspect
-├── zomato_powerbi_dashboard.png    # Power BI dashboard
-├── zomato.pbix                     # Power BI source file
-└── README.md
+Raw CSV Data
+     ↓
+Text Preprocessing (Lowercase, Remove Punctuation, Stopword Removal, Lemmatization)
+     ↓
+VADER Sentiment Scoring (Unsupervised Baseline)
+     ↓
+TF-IDF Vectorization
+     ↓
+ML Classification (Logistic Regression + Naive Bayes)
+     ↓
+Aspect-Based Sentiment Analysis
+     ↓
+Power BI Dashboard (Interactive Visuals, City Slicer)
 
-## 🚀 How to Run
+Steps
+1. Text Preprocessing (Python)
 
-pip install pandas numpy matplotlib seaborn scikit-learn vaderSentiment
-python zomato_sentiment_analysis.ipynb
+Converted review text to lowercase
+Removed punctuation and numbers using regex
+Removed stopwords using NLTK English stopwords corpus
+Applied lemmatization using WordNetLemmatizer to reduce words to root form
 
-## 📊 Visualizations
+2. VADER Sentiment Scoring (Unsupervised)
+
+Applied VADER SentimentIntensityAnalyzer on raw review text
+Generated compound score ranging from -1 to +1
+Classified sentiment using threshold: compound ≥ 0.05 = Positive, ≤ -0.05 = Negative, else Neutral
+Achieved 67.1% accuracy as unsupervised baseline
+
+3. TF-IDF Vectorization + ML Classification (Supervised)
+
+Vectorized cleaned text using TF-IDF (max 3,000 features, bigrams, min_df=2)
+Final vocabulary: 682 meaningful features after filtering
+Split data 80/20 with stratification to maintain class balance
+Trained Logistic Regression and Naive Bayes classifiers
+Both models achieved 96.2% accuracy — a 29% improvement over VADER
+
+4. Aspect-Based Analysis
+
+Identified 6 key aspects: Food Quality, Delivery Speed, Packaging, Price/Value, Quantity, Customer Service
+Used keyword matching with str.contains() to find reviews mentioning each aspect
+Calculated positive and negative sentiment percentage per aspect
+
+5. Power BI Dashboard
+
+Loaded scored CSV into Power BI Desktop
+Built 6 interactive visuals with a city slicer
+Created aspect summary chart using exported aspect CSV
+
+Key Insights
+
+Supervised ML significantly outperforms rule-based scoring — Logistic Regression achieved 96.2% accuracy vs VADER's 67.1%, proving that labeled historical data enables far more accurate sentiment classification.
+Packaging has the highest negative sentiment — 26% of packaging-related reviews are negative, making it the most complained-about aspect. Zomato should prioritize spill-proof, tamper-evident packaging.
+Month-to-month contract customers churn most — Customers on flexible plans are significantly more likely to leave, suggesting loyalty incentives for long-term engagement.
+Delhi has the highest average rating (3.78), Chennai the lowest (3.50) — Significant city-wise variation suggests regional operational differences that need targeted improvement.
+Food Quality is the most discussed aspect — Appearing in the highest number of reviews, food quality drives both the strongest positive and negative sentiment.
+Price/Value has the lowest negative sentiment (11%) — Customers generally feel Zomato offers good value for money, suggesting pricing is not a major pain point.
+
+
+## Visualizations
 
 ### Most Discussed Aspects
 ![Aspects](Most_discussed_aspects.png)
@@ -64,14 +104,5 @@ python zomato_sentiment_analysis.ipynb
 ### Power BI Dashboard
 ![Dashboard](zomato_powerbi_dashboard.png.png)
 
-##key Insights
-- Food quality is the most discussed factor in customer reviews
-- Delivery delays strongly correlate with negative sentiment
-- Customer Service receives the most complaints proportionally
-  nearly 6 out of 10 mentions are negative experiences
-- Significant variation in satisfaction across cities,
-- Pune has the highest positive sentiment (67.1%), Chennai the lowest (56%)
-- Logistic Regression achieved 96.2% accuracy on test data
-- Supervised ML outperformed VADER (67.1%) significantly
-- Negative reviews mention delivery time 34% more than positive ones
+
 
