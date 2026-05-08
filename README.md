@@ -10,7 +10,7 @@ To analyze 2,000 Zomato restaurant reviews across 8 Indian cities and automatica
 |------|---------|
 | Python (Pandas, NumPy, Matplotlib, Seaborn) | Data cleaning and exploratory data analysis |
 | NLTK, VADER | Text preprocessing and unsupervised sentiment scoring |
-| Scikit-learn (TF-IDF, Logistic Regression, Naive Bayes) | Feature extraction and sentiment classification |
+| Scikit-learn (TF-IDF, Logistic Regression) | Feature extraction and sentiment classification |
 | Power BI | Interactive dashboard and data visualization |
 
 ## Dataset
