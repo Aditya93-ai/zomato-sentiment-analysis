@@ -53,13 +53,13 @@ python zomato_sentiment_analysis.ipynb
 ## 📊 Visualizations
 
 ### Most Discussed Aspects
-![Aspects](Most discussed aspects.png)
+![Aspects](Most_discussed_aspects.png)
 
 ### Top Keywords by Sentiment Class (TF-IDF)
-![TF-IDF](Aspect Analyis.png)
+![TF-IDF](Aspect_Analyis.png)
 
 ### Sentiment Split per Aspect
-![Sentiment Split](Sentiment Split Per Aspect.png)
+![Sentiment Split](Sentiment_Split_Per_Aspect.png)
 
 ### Power BI Dashboard
 ![Dashboard](zomato_powerbi_dashboard.png.png)
