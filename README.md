@@ -1,13 +1,19 @@
 # zomato-sentiment-analysis
 An end-to-end NLP project analyzing customer reviews from Zomato using Python, Machine Learning, and Power BI to uncover customer satisfaction drivers across delivery, food quality, and pricing.
 
-Objective
+##Objective
 To analyze 2,000 Zomato restaurant reviews across 8 Indian cities and automatically classify customer sentiment as Positive, Neutral, or Negative — while identifying which aspects (food quality, delivery, packaging, price) drive customer satisfaction or dissatisfaction.
 
-Tools Used
-ToolPurposePython (Pandas, NumPy, Matplotlib, Seaborn)Data cleaning and exploratory data analysisNLTK, VADERText preprocessing and unsupervised sentiment scoringScikit-learn (TF-IDF, Logistic Regression, Naive Bayes)Feature extraction and sentiment classificationPower BIInteractive dashboard and data visualization
+## Tools Used
 
-Dataset
+| Tool | Purpose |
+|------|---------|
+| Python (Pandas, NumPy, Matplotlib, Seaborn) | Data cleaning and exploratory data analysis |
+| NLTK, VADER | Text preprocessing and unsupervised sentiment scoring |
+| Scikit-learn (TF-IDF, Logistic Regression, Naive Bayes) | Feature extraction and sentiment classification |
+| Power BI | Interactive dashboard and data visualization |
+
+## Dataset
 
 Source: Synthetically generated dataset modelled on real-world Zomato review patterns
 Size: 2,000 rows, 9 columns
@@ -29,7 +35,7 @@ Description: Customer reviews from 20 restaurants across 8 Indian cities coverin
 | sentiment_label | Ground truth sentiment (Positive / Neutral / Negative) |
 
 
-Project Workflow
+#Project Workflow
 
 Raw CSV Data
      ↓
@@ -45,7 +51,7 @@ Aspect-Based Sentiment Analysis
      ↓
 Power BI Dashboard (Interactive Visuals, City Slicer)
 
-Steps
+## Steps
 1. Text Preprocessing (Python)
 
 Converted review text to lowercase
@@ -80,7 +86,7 @@ Loaded scored CSV into Power BI Desktop
 Built 6 interactive visuals with a city slicer
 Created aspect summary chart using exported aspect CSV
 
-Key Insights
+## Key Insights
 
 Supervised ML significantly outperforms rule-based scoring — Logistic Regression achieved 96.2% accuracy vs VADER's 67.1%, proving that labeled historical data enables far more accurate sentiment classification.
 Packaging has the highest negative sentiment — 26% of packaging-related reviews are negative, making it the most complained-about aspect. Zomato should prioritize spill-proof, tamper-evident packaging.
