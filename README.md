@@ -56,7 +56,7 @@ python zomato_sentiment_analysis.ipynb
 ![Aspects](Most_discussed_aspects.png)
 
 ### Top Keywords by Sentiment Class (TF-IDF)
-![TF-IDF](Aspect_Analyis.png)
+![TF-IDF](Aspect_Analysis.png)
 
 ### Sentiment Split per Aspect
 ![Sentiment Split](Sentiment_Split_Per_Aspect.png)
