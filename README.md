@@ -62,7 +62,7 @@ python zomato_sentiment_analysis.ipynb
 ![Sentiment Split](Sentiment Split Per Aspect.png)
 
 ### Power BI Dashboard
-![Dashboard](zomato_powerbi_dashboard.png)
+![Dashboard](zomato_powerbi_dashboard.png.png)
 
 ##key Insights
 - Food quality is the most discussed factor in customer reviews
