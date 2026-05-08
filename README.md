@@ -36,7 +36,7 @@ Description: Customer reviews from 20 restaurants across 8 Indian cities coverin
 
 
 ## Project Workflow
-
+```
 Raw CSV Data
      ↓
 Text Preprocessing (Lowercase, Remove Punctuation, Stopword Removal, Lemmatization)
@@ -50,6 +50,7 @@ ML Classification (Logistic Regression + Naive Bayes)
 Aspect-Based Sentiment Analysis
      ↓
 Power BI Dashboard (Interactive Visuals, City Slicer)
+```
 
 ## Steps
 1. Text Preprocessing (Python)
